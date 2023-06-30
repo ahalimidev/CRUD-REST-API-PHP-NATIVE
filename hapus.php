@@ -1,11 +1,10 @@
 <?php
-// require_once = memanggil file koneksi database
 require_once('koneksi.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //input 
-    $varibel = $_POST['key'];
+    $id_crud = $_POST['id'];
     //proses
-    $proses = "";
+    $proses = "DELETE FROM crud where id_crud = '$id_crud'";
     //output
     if (mysqli_query($con, $proses)) {
         //true

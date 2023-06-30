@@ -1,11 +1,13 @@
 <?php
-// require_once = memanggil file koneksi database
 require_once('koneksi.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //input 
-    $varibel = $_POST['key'];
+    $id_crud = $_POST['id'];
+    $nama = $_POST['nama'];
+    $jk = $_POST['jenis_kelamin'];
+    $nomor_hp = $_POST['nomor_hp'];
     //proses
-    $proses = "";
+    $proses = "UPDATE crud SET nama = '$nama', jenis_kelamin = '$jk', nomor_hp ='$nomor_hp' where id_crud = '$id_crud' ";
     //output
     if (mysqli_query($con, $proses)) {
         //true

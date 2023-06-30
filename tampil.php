@@ -1,7 +1,7 @@
 <?php
-// require_once = memanggil file koneksi database
 require_once('koneksi.php');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
     //proses
     $proses = mysqli_query($con, "SELECT * FROM crud ");
     if (mysqli_num_rows($proses) > 0) {
@@ -11,7 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         while ($row = mysqli_fetch_array($proses)) {
             //tampilkan data
             $hasil = array();
-            $hasil['key'] = $row['value'];
+            $hasil['id_crud'] = $row['id_crud'];
+            $hasil['nama'] = $row['nama'];
+            $hasil['jenis_kelamin'] = $row['jenis_kelamin'];
+            $hasil['nomor_hp'] = $row['nomor_hp'];
             array_push($response['data'], $hasil);
         }
         echo json_encode($response);

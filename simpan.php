@@ -1,11 +1,12 @@
 <?php
-// require_once = memanggil file koneksi database
 require_once('koneksi.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //input 
-    $varibel = $_POST['key'];
+    $nama = $_POST['nama'];
+    $jk = $_POST['jenis_kelamin'];
+    $nomor_hp = $_POST['nomor_hp'];
     //proses
-    $proses = "";
+    $proses = "INSERT INTO crud (nama,jenis_kelamin,nomor_hp) VALUES ('$nama','$jk','$nomor_hp')";
     //output
     if (mysqli_query($con, $proses)) {
         //true

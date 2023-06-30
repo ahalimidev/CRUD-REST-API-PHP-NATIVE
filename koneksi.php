@@ -5,6 +5,6 @@ $server      = "localhost";
 $username_db = "root";
 $password_db = "";
 //nama database
-$database    = "";
+$database    = "materi";
 
 $con  = mysqli_connect($server, $username_db, $password_db, $database) or die('database gagal');
